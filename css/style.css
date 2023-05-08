@@ -378,6 +378,7 @@ main article {
 }
 main article section {
   box-shadow: 0px 6px 16px rgba(123, 133, 152, 0.16);
+  background-color: #fff;
   box-sizing: border-box;
   padding: 20px 24px 0 32px;
 }
@@ -390,6 +391,7 @@ main article .sec1 {
   grid-gap: 1em;
   box-shadow: none;
   padding: 0;
+  background: none;
 }
 main article .sec1 .member_box {
   position: relative;

@@ -316,6 +316,7 @@ main {
         grid-gap: 1em;
         section {
             @include box_shadow;
+            background-color: #fff;
             box-sizing: border-box;
             padding: 20px 24px 0 32px;
         }
@@ -330,6 +331,7 @@ main {
             grid-gap: 1em;
             box-shadow: none;
             padding: 0;
+            background: none;
             .member_box {
                 position: relative;
                 @include box_shadow;
