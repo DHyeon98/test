@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT단말관리시스템</title>
+    <link rel="stylesheet" href="./aos-master/aos-master/dist/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./aos-master/aos-master/dist/aos.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="#">kt 통합단말관리 시스템</a></h1>
+            <ul>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        시설현황
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box">
+                        <ul class="sub_menu">
+                            <li class="group">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="./img/system_diagram.png" alt="">
+                                            전작체계도
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="./img/work.png" alt="">
+                                            전작업
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="./img/group_score.png" alt="">
+                                            조직별 <br>스코어카드</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">전략추진현황</a>
+                                <div class="line"></div>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">조직성과</a>
+                                <div class="line"></div>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">평가관리</a>
+                                <div class="line"></div>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">ANTM기반</a>
+                                <div class="line"></div>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">단말제어</a>
+                                <div class="line"></div>
+                                <ul>
+                                    <li><a href="#">성과모니터링</a></li>
+                                    <li><a href="#">지표배분및승인요청</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub_menu_text">
+                                <a href="#">홈허브단말정보</a>
+                                <div class="line"></div>
+                                <ul>
+                                    <li><a href="#">홈허브단말품질이력</a></li>
+                                    <li><a href="#">홈허브무선맥정보연동</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        셀프개통
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        개통
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        B/S지원
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        통계
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        보안관리
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        고객컨설팅
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        장치원격접속
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        일괄제어
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        커뮤니티
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+                <li class="main_menu">
+                    <a class="main_menu_text" href="#">
+                        ADMIN
+                        <img src="./img/triangle.png" alt="삼각형 이미지">
+                    </a>
+                    <div class="sub_menu_box"></div>
+                </li>
+            </ul> 
+            <div class="login_box">
+                <span>홍길동님</span>
+                <span>영업부</span>
+                <button>로그아웃</button>
+                <a href="#">정보변경</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out" 
+            class="sec1">
+                <div class="member_box">
+                    <a href="#" class="edit"><img src="./img/edit.png" alt="수정 아이콘"></a>
+                    <dl class="name">
+                        <dt><span>영업부 / 대리</span></dt>
+                        <dd>홍길동</dd>
+                    </dl>
+                    <dl class="information">
+                        <div>
+                            <dt><span>사</span><span>번</span></dt>
+                            <dd>de***</dd>
+                        </div>
+                        <div>
+                            <dt>휴대전화</dt>
+                            <dd>010-0000-0000</dd>
+                        </div>
+                        <div>
+                            <dt><span>이</span><span>메</span><span>일</span></dt>
+                            <dd>hong1234@kt.com</dd>
+                        </div>
+                    </dl>
+                </div>
+                <a href="#">
+                    <img src="./img/calendar.png" alt="스케줄 아이콘">
+                    스케줄 설정
+                </a>
+                <a href="#">
+                    <img src="./img/tv.png" alt="tv 아이콘">
+                    단말 상세 조회
+                </a>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-easing="ease-in-out" 
+            class="sec2">
+                <div>
+                    <h2>공지사항</h2>
+                    <a href="#"><img src="./img/plus.png" alt="공지사항 바로가기"></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            공지사항입니다.공지사항입니다.공지사항입니다.
+                            <span>2020/01/01</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            공지사항입니다.공지사항입니다.공지사항입니다.
+                            <span>2020/01/01</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            공지사항입니다.공지사항입니다.공지사항입니다.
+                            <span>2020/01/01</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            공지사항입니다.공지사항입니다.공지사항입니다.
+                            <span>2020/01/01</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            공지사항입니다.공지사항입니다.공지사항입니다.
+                            <span>2020/01/01</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+            data-aos-easing="ease-in-out" 
+            data-aos-offset="-500"
+            class="sec3">
+                <div class="title">
+                    <h2>Quick Tool</h2>
+                    <a href="#"><img src="./img/edit_black.png" alt="Quick Tool 수정 바로가기"></a>
+                </div>
+                <div class="input_box">
+                    <form onsubmit="return false">
+                        <label for="reset1">
+                            성인 PIN 초기화
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset1" placeholder="초기화할 성인 PIN을 입력하세요">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                    <form onsubmit="return false">
+                        <label for="reset2">
+                            구매 PIN 초기화
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset2" placeholder="초기화할 구매 PIN을 입력하세요">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                    <form onsubmit="return false">
+                        <label for="reset3">
+                            시청권한재송출
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset3">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                    <form onsubmit="return false">
+                        <label for="reset4">
+                            시청권한재송출
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset4">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                    <form onsubmit="return false">
+                        <label for="reset5">
+                            시청권한재송출
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset5">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                    <form onsubmit="return false">
+                        <label for="reset6">
+                            시청권한재송출
+                        </label>
+                        <div>
+                            <input type="text" autocomplete="off" id="reset6">
+                            <input type="submit" value="확인">
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out" 
+            class="md_sec1">
+                <div class="chart_title">
+                    <h2>금일 단말유형별 개통 건수 <span>07/17일</span></h2>
+                    <div class="chart_btn">
+                        <button class="situation_btn on">개통상태별</button>
+                        <button class="circulation_btn off">개통유통별</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="legend_box">
+                        <button>
+                            <span></span>
+                            개통완료
+                        </button>
+                        <button>
+                            <span></span>
+                            개통대기
+                        </button>
+                    </div>
+                    <canvas id="today_opening" class="opening" width="845" height="260"></canvas>
+                    <canvas id="circulation_opening" class="opening" width="845" height="260"></canvas>
+                </div>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-easing="ease-in-out" 
+            class="md_sec2">
+                <div class="chart_title">
+                    <h2>최근 7일간 개통 건수</h2>
+                </div>
+                <div>
+                    <div class="legend_box">
+                        <button>
+                            <span></span>
+                            기가지니
+                        </button>
+                        <button>
+                            <span></span>
+                            Olleh TV
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(가정)
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(기업)
+                        </button>
+                        <button>
+                            <span></span>
+                            홈AP
+                        </button>
+                        <button>
+                            <span></span>
+                            홈IoT
+                        </button>
+                    </div>
+                    <canvas id="recent_opening" width="845" height="250"></canvas>
+                    <div class="date">
+                        <span>7/11</span>
+                        <span>7/12</span>
+                        <span>7/13</span>
+                        <span>7/14</span>
+                        <span>7/15</span>
+                        <span>7/16</span>
+                    </div>
+                </div>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+            data-aos-easing="ease-in-out" 
+            data-aos-offset="-500"
+            class="md_sec3">
+                <div class="chart_title">
+                    <h2>장기미사용 단말</h2>
+                    <div class="chart_btn">
+                        <button class="unused_btn category_btn on">단말유형별</button>
+                        <button class="unused_btn period_btn off">기간별</button>
+                        <button class="unused_btn region_btn off">지역별</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="legend_box">
+                        <button>
+                            <span></span>
+                            기가지니
+                        </button>
+                        <button>
+                            <span></span>
+                            Olleh TV
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(가정)
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(기업)
+                        </button>
+                        <button>
+                            <span></span>
+                            홈AP
+                        </button>
+                        <button>
+                            <span></span>
+                            홈IoT
+                        </button>
+                    </div>
+                    <canvas id="category_chart" class="unused" width="845" height="260"></canvas>
+                    <canvas id="period_chart" class="unused" width="845" height="260"></canvas>
+                    <canvas id="region_chart" class="unused" width="845" height="260"></canvas>
+                </div>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out" 
+            class="last_sec1">
+                <div class="chart_title">
+                    <h2>단말 유형별 현황</h2>
+                    <span>기준 시간 : <em>매일 04</em>시</span>
+                </div>
+                <div class="chart_box">
+                    <div>
+                        <canvas id="situation_chart" width="240" height="240"></canvas>
+                    </div>
+                    <div class="legend_box">
+                        <button>
+                            <span></span>
+                            기가지니
+                        </button>
+                        <button>
+                            <span></span>
+                            Olleh TV
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(가정)
+                        </button>
+                        <button>
+                            <span></span>
+                            인터넷전화(기업)
+                        </button>
+                        <button>
+                            <span></span>
+                            홈AP
+                        </button>
+                        <button>
+                            <span></span>
+                            홈IOT
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-easing="ease-in-out" 
+            class="last_sec2">
+                <div>
+                    <h2>업그레이드 성공 <span> 50건</span></h2>
+                </div>
+                <ul class="table_head"> 
+                    <li>시간</li>
+                    <li>Title</li>
+                    <li>내용</li>
+                </ul>
+                <ul class="table_text">
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>2020-01-01</span>
+                        <dl>
+                            <dt>
+                                01 AT203-003H 
+                            </dt>
+                            <dd>
+                                <p>
+                                    - 01 AT203-003H 
+                                </p>
+                                <p>
+                                    - 완료
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <div class="footer_container">
+            <img src="./img/footer_logo.png" alt="푸터 로고 이미지">
+            <span>Copyright(C) 2020. <em>KT Corp</em>. All Rights Reserved.</span>
+            <p>
+                <a href="http://validator.kldp.org/check?uri=referer"
+                  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"><img
+                  src="//validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+    <script src="./js/chart_custom.js"></script>
+</body>
+</html>
